@@ -20,9 +20,9 @@ class Transition(object):
         print(split)
 
         if len(split) != 5:
-            raise TransitionParsingError("Transition '{}' has incorrect number of arguments".format(transition))
+            raise TransitionParsingError()
         if not Direction.is_valid(split[4]):
-            raise TransitionParsingError("Transition '{}' has invalid tape direction '{}'".format(transition, split[4]))
+            raise TransitionParsingError()
         return Transition(split[0], split[1], split[2], split[3], split[4])
 
 class TransitionTable(object):
